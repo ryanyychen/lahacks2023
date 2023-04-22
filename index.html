@@ -15,6 +15,21 @@
    <body>
       <!-- User Inputs -->
       <div id="user_info">
+         <!-- Upload Degree Audit -->
+         <div id="fileUpload">
+            <form action="/action_page.php">
+               <label for="file">To get started, upload your
+                  <a
+                     href="https://students.ucsd.edu/academics/advising/degrees-diplomas/degree-audits.html"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                  degree audit</a>:
+               </label>
+               <input type="file" name="filename" style="margin-top:5px">
+               <br />
+               <input type="submit" style="margin-top: 5px;">
+            </form>
+         </div>
          <!-- University Input -->
          <div class="input">
             <span class="dropdown_label">University:</span>
@@ -36,24 +51,17 @@
 
       <!-- Display Tree -->
       <div id="tree_display">
-         <ul class="tree">
-            <li>
-               CSE 11
-               <ul>
-                  <li>CSE 12</li>
-                  <li>CSE 15L</li>
-                  <li>Course
-                     <ul>
-                        next
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-         <p>Displaying a circle w/ text:</p>
          <div class="tree_layer">
             <div class="node">
                <span class="course">CSE 11</span>
+            </div>
+         </div>
+         <div class="tree_layer">
+            <div class="node">
+               <span class="course">CSE 12</span>
+            </div>
+            <div class="node">
+               <span class="course">CSE 15L</span>
             </div>
          </div>
       </div>

@@ -2,6 +2,12 @@
    border-style: solid;
    padding: 5px 5px 5px 5px;
 }
+#fileUpload {
+   border-style: solid;
+   display: flex;
+   flex-direction: column;
+   align-items: left;
+}
 .input {
    display: flex;
    border-style: solid;
@@ -27,7 +33,6 @@
    flex-direction: column;
    border-style: solid;
    align-items: center;
-   justify-content: center;
 }
 .tree_layer {
    border-style: solid;
@@ -41,4 +46,5 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   margin: 3px 3px 3px 3px;
 }
