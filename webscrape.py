@@ -18,6 +18,16 @@ def getHTMLContent(url):
     site = requests.get(url)
     htmlContent = BeautifulSoup(site.content, 'html.parser')
 
+    # find the desired header tag
+    header = htmlContent.find('h2', string='Graduate')
+
+    # find all tags after the header tag
+    tags_to_remove = header.find_all_next()
+
+    # loop through the tags and remove them
+    for tag in tags_to_remove:
+        tag.decompose()
+
     return htmlContent
 
 def getCourseCatalog(htmlContent):
@@ -47,9 +57,9 @@ def getCourseCatalog(htmlContent):
             prerequisitesText = preq_tag.next_sibling.strip()
             prerequisites = getPrereqs(prerequisitesText)
         # removes units because unicode incompability
-        noUnit = course.text.index(" (")
+        justId = course.text.index(".")
         # inserts course and its prerequisites into courseCatalog
-        courseCatalog[course.text[:noUnit]] = prerequisites
+        courseCatalog[course.text[:justId]] = prerequisites
     return courseCatalog
 
 def getPrereqs(prerequisitesText):
@@ -75,8 +85,17 @@ def getPrereqs(prerequisitesText):
     # get string of only prerequisites
     end = prerequisitesText.index(".")
     prerequisitesText = prerequisitesText[:end]
+    # cut consent of instructor
     if " or consent of instructor" in prerequisitesText:
         end = prerequisitesText.index(" or consent of instructor")
+        prerequisitesText = prerequisitesText[:end]
+    # cut anything after semicolon
+    if ";" in prerequisitesText:
+        end = prerequisitesText.index(";")
+        prerequisitesText = prerequisitesText[:end]
+    # cut anything permission by instructor
+    if " or permission of constructor" in prerequisitesText:
+        end = prerequisitesText.index(" or permission of constructor")
         prerequisitesText = prerequisitesText[:end]
     prerequisitesText = prerequisitesText.replace('\u2013', '-')
     prerequisitesText = prerequisitesText.replace("(", "")
@@ -97,4 +116,5 @@ def webScrape(dept):
     json_object = json.dumps(courseCatalog, indent=4)
     with open("courseCatalog.json", "w") as outfile:
         outfile.write(json_object)
+
 webScrape("CSE")
