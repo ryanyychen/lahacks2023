@@ -45,6 +45,8 @@ body {
 .tree_layer {
    border-style: solid;
    display: flex;
+   justify-content: center;
+   margin-bottom: 5px;
 }
 .node {
    width: 75px;
@@ -55,4 +57,6 @@ body {
    align-items: center;
    justify-content: center;
    margin: 3px 3px 3px 3px;
+   font-size: 12px;
+   font-weight: bold;
 }
