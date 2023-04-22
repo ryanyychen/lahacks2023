@@ -1,3 +1,9 @@
+body {
+   border-style: solid;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
 #user_info {
    border-style: solid;
    padding: 5px 5px 5px 5px;
@@ -33,6 +39,8 @@
    flex-direction: column;
    border-style: solid;
    align-items: center;
+   flex: 1;
+   overflow-y: auto;
 }
 .tree_layer {
    border-style: solid;
