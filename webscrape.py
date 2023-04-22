@@ -91,9 +91,10 @@ def getPrereqs(prerequisitesText):
     return prerequisitesArr
 
 def webScrape(dept):
-    url = 'https://catalog.ucsd.edu/courses/<dept>.html'
-    url.replace("<dept>", dept)
+    url = f'https://catalog.ucsd.edu/courses/{dept}.html'
     htmlContent = getHTMLContent(url)
     courseCatalog = getCourseCatalog(htmlContent)
-    print(json.dumps(courseCatalog, indent=4))
-
+    json_object = json.dumps(courseCatalog, indent=4)
+    with open("courseCatalog.json", "w") as outfile:
+        outfile.write(json_object)
+webScrape("CSE")
