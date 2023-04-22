@@ -66,6 +66,14 @@ while (true) {
 
             /* Add course to list of courses in this layer */
             taking.push(courseName);
+/*
+            let currentCourse = document.getElementById(courseName);
+            for (let i = 0; i < prerequisites.length; i++) {
+               let prerequisiteCourse = document.getElementById(prerequisites[i]);
+               if (prerequisiteCourse) {
+                  drawLine(currentCourse, prerequisiteCourse);
+               }
+            }*/
          }
       }
    }
@@ -95,3 +103,16 @@ function addCourse(courseName, parentDiv) {
    node.appendChild(course);
    parentDiv.appendChild(node);
 }
+/*
+function drawLine(node1, node2) {
+   let parentDiv = node1.parentElement;
+   let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+   svg.className = "line";
+   parentDiv.appendChild(svg);
+   let line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+   line.setAttribute("x1", node1.offsetLeft + node1.offsetWidth / 2);
+   line.setAttribute("y1", node1.offsetTop + node1.offsetHeight / 2);
+   line.setAttribute("x2", node2.offsetLeft + node2.offsetWidth / 2);
+   line.setAttribute("y2", node2.offsetTop + node2.offsetHeight / 2);
+   svg.appendChild(line);
+} */
