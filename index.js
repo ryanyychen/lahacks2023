@@ -34,13 +34,8 @@ while (true) {
    /* Use iterator to iterate map */
    let iterator = courses.keys();
 
-   /* Create new layer to tree */
-   let layer = document.createElement('div');
-   layer.className = "tree_layer";
-   layer.id = "layer" + layerNum;
-   /* Append layer to tree */
-   let parentDiv = document.getElementById("tree_display");
-   parentDiv.appendChild(layer);
+   /* Add new layer to tree */
+   addLayer(layerNum, document.getElementById("tree_display"));
 
    let taking = [];
 
@@ -56,6 +51,7 @@ while (true) {
          /* Get array of prerequisites using key */
          let prerequisites = courses.get(courseName);
          let canTake = true;
+
          /* Iterate through each prerequisite and check if in 'completed' array */
          if (prerequisites.length != 1 || prerequisites[0] != null) {
             for (let i = 0; i < prerequisites.length; i++) {
@@ -66,23 +62,36 @@ while (true) {
          }
          /* If all prereqs satisfied, create new node and add to layer */
          if (canTake) {
-            let node = document.createElement('div');
-            node.className = "node";
-            let course = document.createElement('span');
-            course.className = "course";
-            course.id = courseName;
-            course.textContent = courseName;
-            node.appendChild(course);
-            layer.appendChild(node);
+            addCourse(courseName, document.getElementById("layer" + layerNum));
 
-            /* Add course to list of courses taken this layer */
+            /* Add course to list of courses in this layer */
             taking.push(courseName);
          }
       }
    }
-   /* Add all courses taken this layer to completed courses */
+   /* Add all courses in this layer to completed courses */
    for (let i = 0; i < taking.length; i++) {
       completed.push(taking[i]);
    }
    layerNum++;
+}
+
+/* Function to create new layer and append to tree_display div */
+function addLayer(layerNum, parentDiv) {
+   let layer = document.createElement('div');
+   layer.className = "tree_layer";
+   layer.id = "layer" + layerNum;
+   parentDiv.appendChild(layer);
+}
+
+/* Function to create new course and append to layer */
+function addCourse(courseName, parentDiv) {
+   let node = document.createElement('div');
+   node.className = "node";
+   let course = document.createElement('span');
+   course.className = "course";
+   course.id = courseName;
+   course.textContent = courseName;
+   node.appendChild(course);
+   parentDiv.appendChild(node);
 }
