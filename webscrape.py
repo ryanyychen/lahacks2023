@@ -75,7 +75,13 @@ def getPrereqs(prerequisitesText):
     # get string of only prerequisites
     end = prerequisitesText.index(".")
     prerequisitesText = prerequisitesText[:end]
+    if " or consent of instructor" in prerequisitesText:
+        end = prerequisitesText.index(" or consent of instructor")
+        prerequisitesText = prerequisitesText[:end]
     prerequisitesText = prerequisitesText.replace('\u2013', '-')
+    prerequisitesText = prerequisitesText.replace("(", "")
+    prerequisitesText = prerequisitesText.replace(")", "")
+
 
     # separate all prerequisites
     # ex: [CSE 15L, CSE 20 or MATH 109]
@@ -84,8 +90,10 @@ def getPrereqs(prerequisitesText):
         
     return prerequisitesArr
 
-# Test
-htmlContent = getHTMLContent('https://catalog.ucsd.edu/courses/CSE.html')
-courseCatalog = getCourseCatalog(htmlContent)
-print(json.dumps(courseCatalog, indent=4))
+def webScrape(dept):
+    url = 'https://catalog.ucsd.edu/courses/<dept>.html'
+    url.replace("<dept>", dept)
+    htmlContent = getHTMLContent(url)
+    courseCatalog = getCourseCatalog(htmlContent)
+    print(json.dumps(courseCatalog, indent=4))
 
