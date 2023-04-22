@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="Visualization tool for college degree planning">
+      <meta name="keywords" content="university, college, degree, planner, courses">
+      <meta name="author" content="Brandon Reponte, Ryan Chen">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <link rel="stylesheet" href="index.css">
+      <title>
+         Degree Visualizer
+      </title>
+   </head>
+   <body>
+      <!-- User Inputs -->
+      <div id="user_info">
+         <!-- Upload Degree Audit -->
+         <div id="fileUpload">
+            <form action="/action_page.php">
+               <label for="file">To get started, upload your
+                  <a
+                     href="https://students.ucsd.edu/academics/advising/degrees-diplomas/degree-audits.html"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                  degree audit</a>:
+               </label>
+               <input type="file" name="filename" style="margin-top:5px">
+               <br />
+               <input type="submit" style="margin-top: 5px;">
+            </form>
+         </div>
+         <!-- University Input -->
+         <div class="input">
+            <span class="dropdown_label">University:</span>
+            <select class="dropdown">
+               <option value="UC San Diego">UC San Diego</option>
+               <!-- Create more options using JS -->
+            </select>
+         </div>
+         <!-- Major/Minor Input -->
+         <div class="input">
+            <span class="dropdown_label">Major/Minor:</span>
+            <select class="dropdown">
+               <option value="Computer Science">Computer Science</option>
+               <!-- Create more options using JS -->
+            </select>
+         </div>
+         <!-- A checkbox for if selected degree is a minor -->
+      </div>
+
+      <!-- Display Tree -->
+      <div id="tree_display">
+         <div class="tree_layer">
+            <div class="node">
+               <span class="course">CSE 11</span>
+            </div>
+         </div>
+         <div class="tree_layer">
+            <div class="node">
+               <span class="course">CSE 12</span>
+            </div>
+            <div class="node">
+               <span class="course">CSE 15L</span>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
