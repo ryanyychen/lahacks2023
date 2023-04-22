@@ -22,7 +22,14 @@
    min-width: 100px;
    min-height: 25px;
 }
-.tree_display {
+#tree_display {
+   display: flex;
+   flex-direction: column;
+   border-style: solid;
+   align-items: center;
+   justify-content: center;
+}
+.tree_layer {
    border-style: solid;
    display: flex;
 }
