@@ -1,0 +1,58 @@
+body {
+   border-style: solid;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+#user_info {
+   border-style: solid;
+   padding: 5px 5px 5px 5px;
+}
+#fileUpload {
+   border-style: solid;
+   display: flex;
+   flex-direction: column;
+   align-items: left;
+}
+.input {
+   display: flex;
+   border-style: solid;
+   justify-content: left;
+   align-items: center;
+   width: fit-content;
+   height: min(15vh, 30px);
+   padding: 1px;
+}
+.dropdown_label {
+   margin: 0px 5px 0px 0px;
+}
+.dropdown {
+   width: 40vw;
+   height: 5vw;
+   max-width:150px;
+   max-height: 30px;
+   min-width: 100px;
+   min-height: 25px;
+}
+#tree_display {
+   display: flex;
+   flex-direction: column;
+   border-style: solid;
+   align-items: center;
+   flex: 1;
+   overflow-y: auto;
+}
+.tree_layer {
+   border-style: solid;
+   display: flex;
+}
+.node {
+   width: 75px;
+   height: 75px;
+   border-radius: 50%;
+   background-color: yellow;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 3px 3px 3px 3px;
+}
