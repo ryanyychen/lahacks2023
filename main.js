@@ -9,8 +9,6 @@ Promise.all(promises)
         var layerNum = 1;
         var courses = Object.keys(courseListL).concat(Object.keys(courseListU));
         var newAdds = 1;
-        var taking = [];
-        var overflow = false;
 
         while (newAdds != 0) {
             var origNum = completed.length;
@@ -18,11 +16,7 @@ Promise.all(promises)
             var courseNum = 0;
             addLayer(layerNum, document.getElementById("tree_display"));
 
-            if (overflow) {
-                overflow = false;
-            } else {
-                taking = []
-            }
+            let taking = [];
 
             /* Iterate map to find classes that can be taken
             and create nodes of those classes */
@@ -38,40 +32,36 @@ Promise.all(promises)
                         allPrerequisites = courseListU[course];
                     }
 
-                    // For now use first element in each 'and' list
-                    let prerequisites = [];
-                    for (let i = 0; i < allPrerequisites.length; i++) {
-                        prerequisites.push(allPrerequisites[i][0])
-                    }
-
-                    let canTake = true;
+                    // Parse first course in each 'and' list and compile 'or' list
                     let prereqs = [];
-                    /* Iterate through each prerequisite and check if in 'completed' array */
-                    if (prerequisites.length > 0 && prerequisites[0] !== null) {
-                        for (let i = 0; i < prerequisites.length; i++) {
-                            prereqs.push(prerequisites[i]);
-                        if (!completed.includes(prerequisites[i])) {
+                    let altPrereqs = [];
+                    let canTake = true;
+                    for (let i = 0; i < allPrerequisites.length; i++) {
+                        prereqs.push(allPrerequisites[i][0]);
+                        if (!completed.includes(allPrerequisites[i][0])) {
                             canTake = false;
                         }
+                        var subAltPrereqs = [];
+                        for (let j = 1; j < allPrerequisites[i].length; j++) {
+                            subAltPrereqs.push(allPrerequisites[i][j]);
+                        }
+                        if (subAltPrereqs.length != 0) {
+                            var subAltPrereqsStr = allPrerequisites[i][0] + ": " + subAltPrereqs.join(" / ");
+                            altPrereqs.push(subAltPrereqsStr);
                         }
                     }
-                    /* If all prereqs satisfied, create new node and add to layer */
+
                     if (canTake) {
                         if (Object.keys(courseListU).includes(course) && courseListU[course].length == 0) {
                             completed.push(course);
                         } else if (Object.keys(courseListU).includes(course) && layerNum < 4) {
                             continue;
                         } else {
-                            addCourse(course, document.getElementById("layer" + layerNum), prereqs);
-                            courseNum++;
+                            addCourse(course, document.getElementById("layer" + layerNum), prereqs, altPrereqs);
                         }
 
                         /* Add course to list of courses in this layer */
                         taking.push(course);
-                    }
-                    if (courseNum >= 14) {
-                        overflow = true;
-                        break;
                     }
                 }
             }
@@ -85,23 +75,24 @@ Promise.all(promises)
 
         /* Function to create new layer and append to tree_display div */
         function addLayer(layerNum, parentDiv) {
-        let layer = document.createElement('div');
-        layer.className = "tree_layer";
-        layer.id = "layer" + layerNum;
-        parentDiv.appendChild(layer);
+            let layer = document.createElement('div');
+            layer.className = "tree_layer";
+            layer.id = "layer" + layerNum;
+            parentDiv.appendChild(layer);
         }
 
         /* Function to create new course and append to layer */
-        function addCourse(courseName, parentDiv, prereqs) {
-        let node = document.createElement('div');
-        node.className = "node";
-        node.id = courseName;
-        let course = document.createElement('span');
-        course.className = "course";
-        course.textContent = courseName;
-        node.dataset.prerequisites = prereqs;
-        node.appendChild(course);
-        parentDiv.appendChild(node);
+        function addCourse(courseName, parentDiv, prereqs, altPrereqs) {
+            let node = document.createElement('div');
+            node.className = "node";
+            node.id = courseName;
+            let course = document.createElement('span');
+            course.className = "course";
+            course.textContent = courseName;
+            node.dataset.prerequisites = prereqs;
+            node.dataset.altprereqs = altPrereqs;
+            node.appendChild(course);
+            parentDiv.appendChild(node);
         }
     })
     .catch(error => {

@@ -7,18 +7,33 @@ body {
    flex-direction: column;
    padding: 0px 10px 0px 10px;
 }
+#topbar {
+   display: flex;
+}
+#altprereqs {
+   background: rgb(0,98,155);
+   width: 700px;
+   height: 120px;
+   border-radius: 20px;
+   margin: 0px 0px 0px 10px;
+   padding: 5px 5px 5px 20px;
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: column;
+   overflow-y: auto;
+}
+.alttext {
+   -webkit-text-fill-color: white;
+}
+.hidden {
+   opacity: 0%;
+}
 #user_info {
    background: rgb(24,43,73);
    width: 600px;
-   fill-opacity: 20%;
+   height: 120px;
    border-radius: 20px;
    padding: 5px 5px 5px 20px;
-}
-a {
-   color: lightblue;
-}
-a:visited {
-   color: lightgray;
 }
 .input {
    -webkit-text-fill-color: white;
@@ -56,19 +71,16 @@ a:visited {
    font-size: 14pt;
 }
 #tree_display {
-   width: 100%;
    background-image: url("./triton.svg");
    background-attachment: fixed;
    background-position: bottom left;
    background-size: 20vw;
    background-repeat: no-repeat;
    display: block;
-   /* position: relative; */
    flex-direction: column;
    align-items: center;
    flex: 1;
-   border: 10px 0px 0px 10px;
-   padding: 10px 10px 10px 10px;
+   padding: 15px 15px 15px 15px;
    overflow-x: auto;
    overflow-y: auto;
 }
@@ -81,21 +93,17 @@ a:visited {
 }
 .node {
    width: 5vw;
-   min-width: 1vw;
-   height: 5vw;
    border-radius: 50%;
+   aspect-ratio: 1;
    border: solid black 3px;
    background-color: gray;
-   display: inline-flex;
-   /* flex-basis: auto; */
-   /* block-size: fit-content; */
-   flex-shrink: 0;
+   display: flex;
    align-items: center;
    justify-content: center;
    margin: 10px 10px 10px 10px;
 }
 .course {
-   font-size: 10pt;
+   font-size: 1vw;
    color: white;
    font-weight: bold;
 }
