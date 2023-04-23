@@ -1,0 +1,72 @@
+{
+    "CSE 3": [],
+    "CSE 4GS": [
+        [
+            "MATH 10A",
+            "MATH 20A"
+        ]
+    ],
+    "CSE 6GS": [
+        [
+            "MATH 10A",
+            "MATH 20A"
+        ]
+    ],
+    "CSE 6R": [],
+    "CSE 8A": [],
+    "CSE 8B": [
+        [
+            "CSE 8A"
+        ]
+    ],
+    "CSE 11": [],
+    "CSE 12": [
+        [
+            "CSE 8B",
+            "CSE 11"
+        ]
+    ],
+    "CSE 15L": [
+        [
+            "CSE 8B",
+            "CSE 11",
+            "CSE 12",
+            "DSC 30"
+        ]
+    ],
+    "CSE 20": [
+        [
+            "CSE 11",
+            "CSE 6R",
+            "CSE 8A",
+            "CSE 8B",
+            "ECE 15"
+        ]
+    ],
+    "CSE 21": [
+        [
+            "CSE 20",
+            "MATH 15A",
+            "MATH 31CH"
+        ]
+    ],
+    "CSE 30": [
+        [
+            "CSE 12"
+        ],
+        [
+            "CSE 15L"
+        ]
+    ],
+    "CSE 42": [],
+    "CSE 86": [
+        [
+            "CSE 12"
+        ]
+    ],
+    "CSE 87": [],
+    "CSE 90": [],
+    "CSE 91": [],
+    "CSE 95": [],
+    "CSE 99": []
+}
