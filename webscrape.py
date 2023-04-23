@@ -13,7 +13,7 @@ def getHTMLContent(url):
         url (string): url to the webpage to be scraped.
 
     Returns:
-        string: HTML contents of the webpage.
+        BeautifulSoup: HTML contents of the webpage.
     """
     site = requests.get(url)
     htmlContent = BeautifulSoup(site.content, 'html.parser')
@@ -110,11 +110,44 @@ def getPrereqs(prerequisitesText):
     return prerequisitesArr
 
 def webScrape(dept):
+    """
+    """
+    # obtain link through given dept
     url = f'https://catalog.ucsd.edu/courses/{dept}.html'
-    htmlContent = getHTMLContent(url)
-    courseCatalog = getCourseCatalog(htmlContent)
-    json_object = json.dumps(courseCatalog, indent=4)
-    with open("courseCatalog.json", "w") as outfile:
-        outfile.write(json_object)
+    # get BeautifulSoup of course catalog
+    lower = getHTMLContent(url)
+
+    # find upper division cut off point
+    division = lower.find('h2', string='Upper Division')
+
+    # extract all siblings after the target heading
+    target_content = list(division.next_siblings)
+
+    # create a new BeautifulSoup object with the target content
+    upper = BeautifulSoup('', 'html.parser')
+    upper.append(division)
+    for sibling in target_content:
+        if sibling.name:
+            upper.append(sibling)
+
+    # construct dictionary of upper divs
+    upperDivs = getCourseCatalog(upper)
+
+    # find all tags after the header tag
+    tags_to_remove = division.find_all_next()
+
+    # loop through the tags and remove them
+    for tag in tags_to_remove:
+        tag.decompose()
+
+    # construct dictionary of lower divs
+    lowerDivs = getCourseCatalog(lower)
+    # convert dictionary to json
+    json_lower = json.dumps(lowerDivs, indent=4)
+    json_upper = json.dumps(upperDivs, indent=4)
+    with open("lowerDivs.json", "w") as outfile:
+        outfile.write(json_lower)
+    with open("upperDivs.json", "w") as outfile:
+        outfile.write(json_upper)
 
 webScrape("CSE")
