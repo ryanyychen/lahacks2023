@@ -28,11 +28,12 @@
             </div>
             <!-- Major/Minor Input -->
             <div class="input">
-               <span class="dropdown_label">Major/Minor:</span>
-               <select class="dropdown">
-                  <option value="Computer Science">Computer Science</option>
-                  <!-- Create more options using JS -->
-               </select>
+               <span class="dropdown_label">Department:</span>
+               <input list="depts" id="dptdropdown">
+               <datalist id="depts">
+                  <script src="dropdown.js"></script>
+               </datalist>
+               <button class="button" id="submit" style="width:100px;margin-left:10px">Generate</button>
             </div>
          </div>
          <div id="altprereqs" class="hidden">

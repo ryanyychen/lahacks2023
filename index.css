@@ -49,6 +49,12 @@ body {
    font-size: 15pt;
    margin: 0px 5px 0px 0px;
 }
+#dptdropdown {
+   background: white;
+   -webkit-text-fill-color: black;
+   height: 20px;
+   border-radius: 7px;
+}
 .dropdown {
    width: 40vw;
    height: 3vw;
@@ -64,6 +70,7 @@ body {
    margin: 15px 0px 15px 0px;
 }
 .button {
+   -webkit-text-fill-color: black;
    width: 175px;
    height: 35px;
    border-radius: 15px;
