@@ -27,14 +27,22 @@
                </select>
             </div>
             <!-- Major/Minor Input -->
-            <div class="input">
+            <form class="input" action="/reqDept" method="POST">
                <span class="dropdown_label">Department:</span>
-               <input list="depts" id="dptdropdown">
+               <input list="depts" id="dptdropdown" name="department">
                <datalist id="depts">
                   <script src="dropdown.js"></script>
                </datalist>
                <button class="button" id="submit" style="width:100px;margin-left:10px">Generate</button>
-            </div>
+               <script src="webscrape.js"></script>
+            </form>
+            <script>
+               document.getElementById('submit').addEventListener('click', function() {
+                  console.log("button clicked");
+                  console.log("submitting "+document.forms[0]);
+                  document.forms[0].submit();
+               });
+            </script>
          </div>
          <div id="altprereqs" class="hidden">
             <label style="font-size:14pt; -webkit-text-fill-color:white; margin-top:10px">Alternative Prereqs to the Class:</label>
@@ -76,17 +84,3 @@
       <script src="mouseover.js"></script>
    </body>
 </html>
-
-<!-- <div class="tree_layer" id="layer1">
-            <div class="node">
-               <span class="course" id="CSE 11">CSE 11</span>
-            </div>
-         </div>
-         <div class="tree_layer" id="layer2">
-            <div class="node">
-               <span class="course" id="CSE 12">CSE 12</span>
-            </div>
-            <div class="node">
-               <span class="course" id="CSE 15L">CSE 15L</span>
-            </div>
-         </div> -->
