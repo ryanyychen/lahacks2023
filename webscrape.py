@@ -4,6 +4,7 @@
 from bs4 import BeautifulSoup
 import requests
 import json
+import re
 
 def getHTMLContent(url):
     """ 
@@ -49,6 +50,8 @@ def getCourseCatalog(htmlContent):
         courseDesc = course.find_next_sibling()
         # find "Prerequisites:", that begins list of prerequisites
         preq_tag = courseDesc.find_next(['em', 'span', 'strong'])
+        if preq_tag.text[0] == 'p':
+            preq_tag = preq_tag.find_next(['em', 'span', 'strong'])
         prerequisitesText = None
         if type(preq_tag) == type(None):
             prerequisites = []
@@ -75,42 +78,54 @@ def getPrereqs(prerequisitesText):
     """
     prerequisitesArr = []
 
-    # get first word of list, if it is not a valid course id then
-    # return empty list as no prerequisites exist.
-    prerequisitesText = str(prerequisitesText)
-    first_word = prerequisitesText.split()[0]
-    if len(first_word) > 4 or "none." in first_word:
-        return prerequisitesArr
+    # Define the pattern to match, "DEPT 123(H/R/AH)"
+    aCourse = r"[A-Z]{3,4}\s+\d{1,3}[A-Z]{0,2}"
 
     # get string of only prerequisites
+    match = re.search(aCourse, prerequisitesText)
+    if match:
+        start = match.start()
+    else:
+        start = 0
     end = prerequisitesText.index(".")
-    prerequisitesText = prerequisitesText[:end]
-    # cut consent of instructor
-    if " or consent of instructor" in prerequisitesText:
-        end = prerequisitesText.index(" or consent of instructor")
-        prerequisitesText = prerequisitesText[:end]
-    # cut anything after semicolon
-    if ";" in prerequisitesText:
-        end = prerequisitesText.index(";")
-        prerequisitesText = prerequisitesText[:end]
-    # cut anything permission by instructor
-    if " or permission of constructor" in prerequisitesText:
-        end = prerequisitesText.index(" or permission of constructor")
-        prerequisitesText = prerequisitesText[:end]
+    prerequisitesText = prerequisitesText[start:end]
+    #print(prerequisitesText)
     prerequisitesText = prerequisitesText.replace('\u2013', '-')
     prerequisitesText = prerequisitesText.replace("(", "")
     prerequisitesText = prerequisitesText.replace(")", "")
 
+    # Define the regular expression pattern to match the substrings you want to keep
+    prerequisitesText = re.sub(r',+\s+or+\s', r' or ', prerequisitesText)
+    prerequisitesText = re.sub(r',+\s+and+\s', r' and ', prerequisitesText)
+    prerequisitesText = re.sub(r',+\s', r' and ', prerequisitesText)
+
+    pattern = re.compile(rf'( or {aCourse}| and {aCourse}|{aCourse})')
+
+    # Use re.findall to extract all matches of the pattern from the input string
+    matches = pattern.findall(prerequisitesText)
+
+    # Join the matches together with a delimiter to create a new string containing only the desired substrings
+    prerequisitesText = ', '.join(matches).replace(', ', '')
+
+    if prerequisitesText == "":
+        return prerequisitesArr
+
+    #print(prerequisitesText)
 
     # separate all prerequisites
     # ex: [CSE 15L, CSE 20 or MATH 109]
     prerequisitesArr = prerequisitesText.split(" and ")
     prerequisitesArr = [req.split(" or ") for req in prerequisitesArr]
-        
+
     return prerequisitesArr
 
 def webScrape(dept):
     """
+    Output two .json's of the upper and lower division requirements to be read
+    by the web app.
+
+    Args:
+        dept (string): 3-4 letter department code
     """
     # obtain link through given dept
     url = f'https://catalog.ucsd.edu/courses/{dept}.html'
