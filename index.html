@@ -27,7 +27,7 @@
                </select>
             </div>
             <!-- Major/Minor Input -->
-            <form class="input" action="/reqDept" method="POST">
+            <form class="input">
                <span class="dropdown_label">Department:</span>
                <input list="depts" id="dptdropdown" name="department">
                <datalist id="depts">
@@ -36,13 +36,6 @@
                <button class="button" id="submit" style="width:100px;margin-left:10px">Generate</button>
                <script src="webscrape.js"></script>
             </form>
-            <script>
-               document.getElementById('submit').addEventListener('click', function() {
-                  console.log("button clicked");
-                  console.log("submitting "+document.forms[0]);
-                  document.forms[0].submit();
-               });
-            </script>
          </div>
          <div id="altprereqs" class="hidden">
             <label style="font-size:14pt; -webkit-text-fill-color:white; margin-top:10px">Alternative Prereqs to the Class:</label>

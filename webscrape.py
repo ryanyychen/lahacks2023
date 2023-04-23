@@ -3,13 +3,9 @@
 # imports
 from bs4 import BeautifulSoup
 import requests
-import json
-import jsonify
 import re
-from flask import Flask, render_template
+import json
 import subprocess
-
-app = Flask(__name__)
 
 def getHTMLContent(url):
     """ 
@@ -123,13 +119,7 @@ def getPrereqs(prerequisitesText):
     prerequisitesArr = [req.split(" or ") for req in prerequisitesArr]
 
     return prerequisitesArr
-
-@app.route("/")
-def index():
-    return render_template('index.html')
-
-@app.route('/reqDept', methods=['POST'])
-def webScrape():
+def webScrape(dept):
     """
     Output two .json's of the upper and lower division requirements to be read
     by the web app.
@@ -137,7 +127,6 @@ def webScrape():
     Args:
         dept (string): 3-4 letter department code
     """
-    dept = request.json['inputField']
     # obtain link through given dept
     url = f'https://catalog.ucsd.edu/courses/{dept}.html'
     # get BeautifulSoup of course catalog
@@ -175,4 +164,4 @@ def webScrape():
         outfile.write(json_lower)
     with open("upperDivs.json", "w") as outfile:
         outfile.write(json_upper)
-    return jsonify({"status": "success"})
+webScrape("CSE")
