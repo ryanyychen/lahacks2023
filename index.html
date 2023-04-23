@@ -14,24 +14,32 @@
    </head>
    <body>
       <!-- User Inputs -->
-      <div id="user_info">
-         <label style="font-size:20pt; -webkit-text-fill-color:white">To get started, enter the following information:</label>
-         <br />
-         <!-- University Input -->
-         <div class="input">
-            <span class="dropdown_label">University:</span>
-            <select class="dropdown">
-               <option value="UC San Diego">UC San Diego</option>
-               <!-- Create more options using JS -->
-            </select>
+      <div id="topbar">
+         <div id="user_info">
+            <label style="font-size:20pt; -webkit-text-fill-color:white">To get started, enter the following information:</label>
+            <br />
+            <!-- University Input -->
+            <div class="input">
+               <span class="dropdown_label">University:</span>
+               <select class="dropdown">
+                  <option value="UC San Diego">UC San Diego</option>
+                  <!-- Create more options using JS -->
+               </select>
+            </div>
+            <!-- Major/Minor Input -->
+            <div class="input">
+               <span class="dropdown_label">Major/Minor:</span>
+               <select class="dropdown">
+                  <option value="Computer Science">Computer Science</option>
+                  <!-- Create more options using JS -->
+               </select>
+            </div>
          </div>
-         <!-- Major/Minor Input -->
-         <div class="input">
-            <span class="dropdown_label">Major/Minor:</span>
-            <select class="dropdown">
-               <option value="Computer Science">Computer Science</option>
-               <!-- Create more options using JS -->
-            </select>
+         <div id="altprereqs" class="hidden">
+            <label style="font-size:14pt; -webkit-text-fill-color:white; margin-top:10px">Alternative Prereqs to the Class:</label>
+            <div id="altptext">
+               <!-- Write text using JS -->
+            </div>
          </div>
       </div>
       <div class="buttons">
