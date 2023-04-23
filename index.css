@@ -76,8 +76,8 @@ input[type=submit]:hover {
 #tree_display {
    background-image: url("./triton.svg");
    background-attachment: fixed;
-   background-position: bottom;
-   background-size: 70vw;
+   background-position: bottom left;
+   background-size: 20vw;
    background-repeat: no-repeat;
    display: flex;
    flex-direction: column;
@@ -108,4 +108,7 @@ input[type=submit]:hover {
 .course {
    font-size: 14pt;
    font-weight: bold;
+}
+.hovered {
+   background-color: white;
 }
