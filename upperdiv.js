@@ -46,4 +46,4 @@ fetch('upperDivs.json')
       })
       .catch(error => {
          console.error('Error fetching JSON:',error);
-})
+      });
