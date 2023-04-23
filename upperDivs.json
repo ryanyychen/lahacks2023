@@ -1,670 +1,604 @@
 {
-    "CSE 100": [
+    "MATH 100A": [
         [
-            "CSE 21",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
-        ],
-        [
-            "CSE 12"
-        ],
-        [
-            "CSE 15L"
-        ],
-        [
-            "CSE 30",
-            "ECE 15"
+            "MATH 31CH",
+            "MATH 109"
         ]
     ],
-    "CSE 100R": [
+    "MATH 100B": [
         [
-            "CSE 21",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
-        ],
-        [
-            "CSE 12"
-        ],
-        [
-            "CSE 15L"
-        ],
-        [
-            "CSE 30",
-            "ECE 15"
+            "MATH 100A"
         ]
     ],
-    "CSE 101": [
+    "MATH 100C": [
         [
-            "CSE 21",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
-        ],
-        [
-            "CSE 12",
-            "DSC 30"
+            "MATH 100B"
         ]
     ],
-    "CSE 103": [
+    "MATH 102": [
         [
-            "MATH 20B"
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
         ],
         [
-            "CSE 21",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
+            "MATH 20C"
         ]
     ],
-    "CSE 105": [
+    "MATH 103A": [
         [
-            "CSE 12"
+            "MATH 31CH",
+            "MATH 109"
+        ]
+    ],
+    "MATH 103B": [
+        [
+            "MATH 103A",
+            "MATH 100A"
+        ]
+    ],
+    "MATH 104A": [
+        [
+            "MATH 100B",
+            "MATH 103B"
+        ]
+    ],
+    "MATH 104B": [
+        [
+            "MATH 104A"
+        ]
+    ],
+    "MATH 105": [
+        [
+            "MATH 31CH",
+            "MATH 109"
+        ]
+    ],
+    "MATH 106": [
+        [
+            "MATH 100B",
+            "MATH 103B"
+        ]
+    ],
+    "MATH 109": [
+        [
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
         ],
         [
-            "CSE 15L"
+            "MATH 20C"
+        ]
+    ],
+    "MATH 110": [
+        [
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
         ],
         [
-            "CSE 20",
-            "MATH 109",
-            "MATH 15A",
+            "MATH 20D"
+        ],
+        [
+            "MATH 20E",
             "MATH 31CH"
+        ]
+    ],
+    "MATH 111A": [
+        [
+            "MATH 20D"
         ],
         [
-            "CSE 21",
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 109",
+            "MATH 31CH"
+        ]
+    ],
+    "MATH 111B": [
+        [
+            "MATH 111A"
+        ]
+    ],
+    "MATH 112A": [
+        [
+            "MATH 11",
+            "MATH 180A",
+            "MATH 183",
+            "MATH 186"
+        ],
+        [
+            "MATH 18",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 20D"
+        ],
+        [
+            "BILD 1"
+        ]
+    ],
+    "MATH 112B": [
+        [
+            "MATH 112A"
+        ],
+        [
+            "MATH 110"
+        ],
+        [
+            "MATH 180A"
+        ]
+    ],
+    "MATH 114": [
+        [
+            "MATH 180A"
+        ]
+    ],
+    "MATH 120A": [
+        [
+            "MATH 20E",
+            "MATH 31CH"
+        ]
+    ],
+    "MATH 120B": [
+        [
+            "MATH 120A"
+        ]
+    ],
+    "MATH 121A": [
+        [
+            "EDS 30MATH 95"
+        ]
+    ],
+    "MATH 121B": [
+        [
+            "EDS 121AMATH 121A"
+        ]
+    ],
+    "MATH 130": [
+        [
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 20D"
+        ]
+    ],
+    "MATH 140A": [
+        [
+            "MATH 31CH",
+            "MATH 109"
+        ]
+    ],
+    "MATH 140B": [
+        [
+            "MATH 140A"
+        ]
+    ],
+    "MATH 140C": [
+        [
+            "MATH 140B"
+        ]
+    ],
+    "MATH 142A": [
+        [
+            "MATH 31CH",
+            "MATH 109"
+        ]
+    ],
+    "MATH 142B": [
+        [
+            "MATH 142A",
+            "MATH 140A"
+        ]
+    ],
+    "MATH 144": [
+        [
+            "MATH 140B",
+            "MATH 142B"
+        ]
+    ],
+    "MATH 146": [
+        [
+            "MATH 140B",
+            "MATH 142B"
+        ]
+    ],
+    "MATH 148": [
+        [
+            "MATH 140B",
+            "MATH 142B"
+        ]
+    ],
+    "MATH 150A": [
+        [
+            "MATH 20E",
+            "MATH 31CHMATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ]
+    ],
+    "MATH 150B": [
+        [
+            "MATH 150A"
+        ]
+    ],
+    "MATH 152": [
+        [
+            "MATH 20DMATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ]
+    ],
+    "MATH 153": [
+        [
+            "MATH 109",
+            "MATH 31CH"
+        ]
+    ],
+    "MATH 154": [
+        [
+            "MATH 31CH",
+            "MATH 109"
+        ]
+    ],
+    "MATH 155A": [
+        [
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 20C"
+        ]
+    ],
+    "MATH 155B": [
+        [
+            "MATH 155A"
+        ]
+    ],
+    "MATH 157": [
+        [
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AHBILD 62"
+        ],
+        [
+            "COGS 18",
+            "CSE 5A",
+            "CSE 6R",
+            "CSE 8A",
+            "CSE 11",
+            "DSC 10",
+            "ECE 15",
+            "ECE 143",
+            "MATH 189"
+        ]
+    ],
+    "MATH 158": [
+        [
+            "MATH 31CH",
+            "MATH 109"
+        ]
+    ],
+    "MATH 160A": [
+        [
             "MATH 100A",
             "MATH 103A",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
+            "MATH 140A"
         ]
     ],
-    "CSE 106": [
+    "MATH 160B": [
+        [
+            "MATH 160A"
+        ]
+    ],
+    "MATH 163": [
+        [
+            "MATH 20B"
+        ]
+    ],
+    "MATH 168A": [
         [
             "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 20C"
+        ]
+    ],
+    "MATH 170A": [
+        [
+            "MATH 18",
+            "MATH 20F",
             "MATH 31AH"
         ],
         [
             "MATH 20C",
             "MATH 31BH"
+        ]
+    ],
+    "MATH 170B": [
+        [
+            "MATH 170A"
+        ]
+    ],
+    "MATH 170C": [
+        [
+            "MATH 20D"
         ],
         [
-            "CSE 21",
-            "DSC 40B",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
+            "MATH 170B"
         ]
     ],
-    "CSE 107": [
+    "MATH 171A": [
         [
-            "CSE 21",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
         ],
         [
-            "CSE 101"
+            "MATH 20C"
+        ]
+    ],
+    "MATH 171B": [
+        [
+            "MATH 171A"
+        ]
+    ],
+    "MATH 173A": [
+        [
+            "MATH 20C",
+            "MATH 31BH"
         ],
         [
-            "CSE 105"
+            "MATH 18"
         ]
     ],
-    "CSE 109": [
+    "MATH 173B": [
         [
-            "CSE 30",
-            "permission of instructor"
+            "MATH 173A"
         ]
     ],
-    "CSE 110": [
+    "MATH 174": [
         [
-            "CSE 100",
-            "CSE 100R"
+            "MATH 21DMATH 20F",
+            "MATH 31AH"
         ]
     ],
-    "CSE 112": [
+    "MATH 175": [
         [
-            "CSE 110"
+            "MATH 174",
+            "MATH 274"
         ]
     ],
-    "CSE 118": [
+    "MATH 179": [
         [
-            "any course from the following: CSE 131, CSE 132B, COGS 102C, COGS 121, COGS 184, COMT 111B, COMT 115, ECE 111, ECE 118, ECE 191, ECE 192,",
-            "ICAM 160B"
+            "MATH 174",
+            "MATH 274"
         ]
     ],
-    "CSE 120": [
+    "MATH 180A": [
         [
-            "CSE 30"
+            "MATH 31BH"
+        ]
+    ],
+    "MATH 180B": [
+        [
+            "MATH 20DMATH 18",
+            "MATH 20F",
+            "MATH 31AH"
         ],
         [
-            "CSE 101"
-        ],
-        [
-            "CSE 110"
-        ]
-    ],
-    "CSE 123": [
-        [
-            "CSE 30"
-        ],
-        [
-            "CSE 101"
-        ],
-        [
-            "CSE 110"
-        ]
-    ],
-    "CSE 124": [
-        [
-            "CSE 30"
-        ],
-        [
-            "CSE 101"
-        ],
-        [
-            "CSE 110"
-        ]
-    ],
-    "CSE 125": [],
-    "CSE 127": [
-        [
-            "CSE 21",
-            "MATH 154",
-            "MATH 158",
-            "MATH 184",
-            "MATH 188"
-        ],
-        [
-            "CSE 120",
-            "CSE 123",
-            "CSE 124"
-        ]
-    ],
-    "CSE 130": [
-        [
-            "CSE 12"
-        ],
-        [
-            "CSE 100",
-            "CSE 100R"
-        ],
-        [
-            "CSE 105"
-        ]
-    ],
-    "CSE 131": [
-        [
-            "CSE 100",
-            "CSE 100R"
-        ],
-        [
-            "CSE 105"
-        ],
-        [
-            "CSE 130"
-        ]
-    ],
-    "CSE 132A": [
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 132B": [
-        [
-            "CSE 132A"
-        ]
-    ],
-    "CSE 132C": [
-        [
-            "CSE 132A",
-            "DSC 102"
-        ]
-    ],
-    "CSE 134B": [
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 135": [
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 136": [
-        [
-            "CSE 135"
-        ]
-    ],
-    "CSE 140": [
-        [
-            "CSE 20",
             "MATH 109",
-            "MATH 15A",
             "MATH 31CH"
         ],
         [
-            "CSE 30"
+            "MATH 180A"
         ]
     ],
-    "CSE 140L": [
+    "MATH 180C": [
         [
-            "CSE 20",
-            "MATH 109",
-            "MATH 15A",
-            "MATH 31CH"
-        ],
-        [
-            "CSE 30"
+            "MATH 180B"
         ]
     ],
-    "CSE 141": [
+    "MATH 181A": [
         [
-            "CSE 30"
-        ],
-        [
-            "CSE 140"
-        ],
-        [
-            "CSE 140L"
-        ]
-    ],
-    "CSE 141L": [
-        [
-            "CSE 30"
-        ],
-        [
-            "CSE 140"
-        ],
-        [
-            "CSE 140L"
-        ]
-    ],
-    "CSE 142": [
-        [
-            "CSE 30"
-        ],
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 142L": [
-        [
-            "CSE 30"
-        ],
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 143": [
-        [
-            "CSE 140"
-        ]
-    ],
-    "CSE 145": [],
-    "CSE 148": [
-        [
-            "CSE 141"
-        ],
-        [
-            "CSE 141L"
-        ]
-    ],
-    "CSE 150A": [
-        [
-            "CSE 12",
-            "DSC 40B"
-        ],
-        [
-            "CSE 15L",
-            "DSC 80"
-        ],
-        [
-            "COGS 118D",
-            "CSE 103",
-            "ECE 109",
-            "ECON 120A",
-            "MATH 180A",
-            "MATH 183"
-        ],
-        [
-            "MATH 20A"
+            "MATH 180A"
         ],
         [
             "MATH 18",
-            "MATH 31AH"
-        ]
-    ],
-    "CSE 150B": [
-        [
-            "CSE 12",
-            "DSC 40B"
-        ],
-        [
-            "CSE 15L",
-            "DSC 80"
-        ],
-        [
-            "COGS 118D",
-            "CSE 103",
-            "ECE 109",
-            "ECON 120A",
-            "MATH 180A",
-            "MATH 183"
-        ],
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 151A": [
-        [
-            "CSE 12",
-            "DSC 40B"
-        ],
-        [
-            "CSE 15L",
-            "DSC 80"
-        ],
-        [
-            "COGS 118D",
-            "CSE 103",
-            "ECE 109",
-            "ECON 120A",
-            "MATH 181A",
-            "MATH 183"
-        ],
-        [
-            "MATH 18",
+            "MATH 20F",
             "MATH 31AH"
         ],
         [
-            "MATH 20C",
-            "MATH 31BH"
+            "MATH 20C"
         ]
     ],
-    "CSE 151B": [
+    "MATH 181B": [
         [
-            "MATH 20C",
-            "MATH 31BH"
-        ],
+            "MATH 181A"
+        ]
+    ],
+    "MATH 181C": [
         [
-            "BENG 134",
-            "COGS 118D",
-            "CSE 103",
+            "MATH 181B"
+        ]
+    ],
+    "MATH 181D": [
+        [
             "ECE 109",
             "ECON 120A",
             "MAE 108",
             "MATH 181A",
             "MATH 183",
-            "MATH 186"
+            "MATH 186",
+            "MATH 189"
         ]
     ],
-    "CSE 152A": [
+    "MATH 181E": [
+        [
+            "MATH 181B"
+        ]
+    ],
+    "MATH 181F": [
+        [
+            "ECE 109",
+            "ECON 120A",
+            "MAE 108",
+            "MATH 11",
+            "MATH 181A",
+            "MATH 183",
+            "MATH 186",
+            "MATH 189"
+        ]
+    ],
+    "MATH 182": [
+        [
+            "MATH 180A"
+        ],
         [
             "MATH 18",
             "MATH 31AH"
-        ],
-        [
-            "CSE 12",
-            "DSC 30"
-        ],
-        [
-            "CSE 15L",
-            "DSC 80"
         ]
     ],
-    "CSE 152B": [
+    "MATH 183": [
         [
-            "CSE 152A",
-            "CSE 152",
-            "CSE 166"
+            "MATH 20C",
+            "MATH 31BH"
         ]
     ],
-    "CSE 156": [
+    "MATH 184": [
         [
-            "CSE 12",
-            "DSC 40B"
-        ],
+            "MATH 31CH",
+            "MATH 109"
+        ]
+    ],
+    "MATH 185": [
         [
-            "CSE 15L",
-            "DSC 80"
-        ],
-        [
-            "BENG 134",
-            "COGS 118D",
-            "CSE 103",
-            "ECE 109",
-            "ECON 120A",
-            "MATH 180A",
             "MATH 181A",
-            "MATH 183",
-            "MATH 186"
-        ]
-    ],
-    "CSE 158": [
-        [
-            "CSE 12",
-            "DSC 40B"
-        ],
-        [
-            "CSE 15L",
-            "DSC 80"
-        ],
-        [
-            "BENG 100",
-            "BENG 134",
-            "COGS 118D",
-            "CSE 103",
-            "ECE 109",
-            "ECON 120A",
-            "MATH 180A",
-            "MATH 181A",
-            "MATH 183",
-            "MATH 186"
-        ]
-    ],
-    "CSE 158R": [
-        [
-            "CSE 12",
-            "DSC 40B"
-        ],
-        [
-            "CSE 15L",
-            "DSC 80"
-        ],
-        [
-            "BENG 100",
-            "BENG 134",
-            "COGS 118D",
-            "CSE 103",
-            "ECE 109",
-            "ECON 120A",
-            "MATH 180A",
-            "MATH 181A",
-            "MATH 183",
-            "MATH 186"
-        ]
-    ],
-    "CSE 160": [
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 163": [
-        [
-            "CSE 167"
-        ]
-    ],
-    "CSE 165": [
-        [
-            "CSE 167"
-        ]
-    ],
-    "CSE 166": [
-        [
-            "DSC 40B",
-            "MATH 18",
+            "ECON 120BMATH 18",
+            "MATH 20F",
             "MATH 31AH"
-        ],
-        [
-            "CSE 100",
-            "CSE 100R",
-            "DSC 80"
-        ]
-    ],
-    "CSE 167": [
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 168": [
-        [
-            "CSE 167"
-        ]
-    ],
-    "CSE 169": [
-        [
-            "CSE 167"
-        ]
-    ],
-    "CSE 170": [
-        [
-            "COGS 108",
-            "CSE 12",
-            "DSC 30"
-        ],
-        [
-            "COGS 1",
-            "COGS 10",
-            "DSGN 1",
-            "ENG 100D"
-        ]
-    ],
-    "CSE 175": [],
-    "CSE 176A": [
-        [
-            "CSE 110",
-            "CSE 170",
-            "COGS 120"
-        ]
-    ],
-    "CSE 176E": [],
-    "CSE 180": [
-        [
-            "BILD 1"
-        ]
-    ],
-    "CSE 180R": [
-        [
-            "BILD 1",
-            "BILD 4",
-            "CSE 3",
-            "CSE 7",
-            "CSE 8A",
-            "CSE 8B",
-            "CSE 11"
-        ]
-    ],
-    "CSE 181": [
-        [
-            "CSE 100",
-            "CSE 100R\u00a0and CSE 101"
-        ],
-        [
-            "BIMM 100",
-            "CHEM 114C"
-        ]
-    ],
-    "CSE 182": [
-        [
-            "CSE 100",
-            "CSE 100R"
-        ]
-    ],
-    "CSE 184": [
-        [
-            "BIMM 181",
-            "BENG 181",
-            "CSE 181, BENG 182",
-            "BIMM 182",
-            "CSE 182",
-            "CHEM 182"
-        ]
-    ],
-    "CSE 185": [
-        [
-            "CSE 11",
-            "CSE 8B"
-        ],
-        [
-            "CSE 12"
         ],
         [
             "MATH 20C",
             "MATH 31BH"
-        ],
-        [
-            "BILD 1"
-        ],
-        [
-            "BIEB 123",
-            "BILD 4",
-            "BIMM 101",
-            "CHEM 109"
         ]
     ],
-    "CSE 190": [],
-    "CSE 191": [],
-    "CSE 192": [],
-    "CSE 193": [],
-    "CSE 194": [
+    "MATH 186": [
         [
-            "AAS 10",
-            "CSE 12",
-            "ECE 35",
-            "ETHN 3",
-            "HILD 7A",
-            "LTEN 27"
-        ],
-        [
-            "CAT 125",
-            "CAT 125R",
-            "CAT 3",
-            "DOC 3",
-            "HUM 2",
-            "MCWP 125",
-            "MCWP 125R",
-            "MCWP 50",
-            "MCWP 50R",
-            "MMW 121",
-            "MMW 121R",
-            "MMW 122",
-            "MMW 13",
-            "SYN 2",
-            "WCWP 100",
-            "WCWP 10B"
+            "MATH 20C",
+            "MATH 31BH"
         ]
     ],
-    "CSE 195": [],
-    "CSE 197": [],
-    "CSE 197C": [],
-    "CSE 198": [],
-    "CSE 199": [],
-    "CSE 199H": []
+    "MATH 187A": [
+        [
+            "MATH 10A",
+            "MATH 20A"
+        ]
+    ],
+    "MATH 187B": [
+        [
+            "MATH 187",
+            "MATH 187A"
+        ],
+        [
+            "MATH 18",
+            "MATH 31AH",
+            "MATH 20F"
+        ]
+    ],
+    "MATH 188": [
+        [
+            "MATH 31CH",
+            "MATH 109"
+        ],
+        [
+            "MATH 18",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 100A"
+        ]
+    ],
+    "MATH 189": [
+        [
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 20CBENG 134"
+        ],
+        [
+            "CSE 103"
+        ],
+        [
+            "ECE 109"
+        ],
+        [
+            "ECON 120A"
+        ],
+        [
+            "MAE 108"
+        ],
+        [
+            "MATH 180A"
+        ],
+        [
+            "MATH 183"
+        ],
+        [
+            "MATH 186"
+        ]
+    ],
+    "MATH 190A": [
+        [
+            "MATH 31CH",
+            "MATH 140A",
+            "MATH 142A"
+        ]
+    ],
+    "MATH 190B": [
+        [
+            "MATH 190A"
+        ]
+    ],
+    "MATH 191": [
+        [
+            "MATH 190"
+        ]
+    ],
+    "MATH 193A": [
+        [
+            "MATH 180A",
+            "MATH 183"
+        ]
+    ],
+    "MATH 193B": [
+        [
+            "MATH 193A"
+        ]
+    ],
+    "MATH 194": [
+        [
+            "MATH 20DMATH 18",
+            "MATH 20F",
+            "MATH 31AH"
+        ],
+        [
+            "MATH 180A"
+        ]
+    ],
+    "MATH 195": [],
+    "MATH 196": [],
+    "MATH 197": [],
+    "MATH 199": [],
+    "MATH 199H": []
 }

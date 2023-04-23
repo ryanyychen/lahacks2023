@@ -1,72 +1,103 @@
 {
-    "CSE 3": [],
-    "CSE 4GS": [
+    "MATH 2": [],
+    "MATH 3C": [],
+    "MATH 4C": [
+        [
+            "MATH 3C"
+        ]
+    ],
+    "MATH 10A": [
+        [
+            "MATH 3C",
+            "MATH 4C"
+        ]
+    ],
+    "MATH 10B": [
         [
             "MATH 10A",
             "MATH 20A"
         ]
     ],
-    "CSE 6GS": [
+    "MATH 10C": [
         [
-            "MATH 10A",
-            "MATH 20A"
+            "MATH 10B",
+            "MATH 20B"
         ]
     ],
-    "CSE 6R": [],
-    "CSE 8A": [],
-    "CSE 8B": [
+    "MATH 11": [
         [
-            "CSE 8A"
+            "MATH 10B",
+            "MATH 20B"
         ]
     ],
-    "CSE 11": [],
-    "CSE 12": [
+    "MATH 15A": [
         [
             "CSE 8B",
             "CSE 11"
         ]
     ],
-    "CSE 15L": [
+    "MATH 18": [
         [
-            "CSE 8B",
-            "CSE 11",
-            "CSE 12",
-            "DSC 30"
+            "MATH 4C",
+            "MATH 10A",
+            "MATH 20A"
         ]
     ],
-    "CSE 20": [
+    "MATH 20A": [
         [
-            "CSE 11",
-            "CSE 6R",
-            "CSE 8A",
-            "CSE 8B",
-            "ECE 15"
+            "MATH 2C",
+            "MATH 4C",
+            "MATH 10A"
         ]
     ],
-    "CSE 21": [
+    "MATH 20B": [
         [
-            "CSE 20",
-            "MATH 15A",
-            "MATH 31CH"
+            "MATH 20A",
+            "MATH 10B",
+            "MATH 10C"
         ]
     ],
-    "CSE 30": [
+    "MATH 20C": [
         [
-            "CSE 12"
+            "MATH 20B"
+        ]
+    ],
+    "MATH 20D": [
+        [
+            "MATH 20C",
+            "MATH 21C",
+            "MATH 31BH"
+        ]
+    ],
+    "MATH 20E": [
+        [
+            "MATH 18",
+            "MATH 20F",
+            "MATH 31AH"
         ],
         [
-            "CSE 15L"
+            "MATH 20C",
+            "MATH 21C",
+            "MATH 31BH"
         ]
     ],
-    "CSE 42": [],
-    "CSE 86": [
+    "MATH 31AH": [],
+    "MATH 31BH": [
         [
-            "CSE 12"
+            "MATH 31AH"
         ]
     ],
-    "CSE 87": [],
-    "CSE 90": [],
-    "CSE 91": [],
-    "CSE 95": [],
-    "CSE 99": []
+    "MATH 31CH": [
+        [
+            "MATH 31BH"
+        ]
+    ],
+    "MATH 87": [],
+    "MATH 95": [],
+    "MATH 96": [
+        [
+            "MATH 20A"
+        ]
+    ],
+    "MATH 99R": []
 }
