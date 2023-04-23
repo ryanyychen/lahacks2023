@@ -124,12 +124,12 @@ def getPrereqs(prerequisitesText):
 
     return prerequisitesArr
 
-@app.route("/")
-def index():
-    return render_template('index.html')
+# @app.route("/")
+# def index():
+#     return render_template('index.html')
 
-@app.route('/reqDept', methods=['POST'])
-def webScrape():
+# @app.route('/reqDept', methods=['POST'])
+def webScrape(dept):
     """
     Output two .json's of the upper and lower division requirements to be read
     by the web app.
@@ -137,7 +137,7 @@ def webScrape():
     Args:
         dept (string): 3-4 letter department code
     """
-    dept = request.json['inputField']
+    # dept = request.json['inputField']
     # obtain link through given dept
     url = f'https://catalog.ucsd.edu/courses/{dept}.html'
     # get BeautifulSoup of course catalog
@@ -171,8 +171,10 @@ def webScrape():
     # convert dictionary to json
     json_lower = json.dumps(lowerDivs, indent=4)
     json_upper = json.dumps(upperDivs, indent=4)
-    with open("lowerDivs.json", "w") as outfile:
+    with open(f"lowerDivs_{dept}.json", "w") as outfile:
         outfile.write(json_lower)
-    with open("upperDivs.json", "w") as outfile:
+    with open(f"upperDivs_{dept}.json", "w") as outfile:
         outfile.write(json_upper)
-    return jsonify({"status": "success"})
+    # return jsonify({"status": "success"})
+
+webScrape("CSE")
