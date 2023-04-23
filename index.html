@@ -9,28 +9,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <link rel="stylesheet" href="index.css">
       <title>
-         Degree Visualizer
+         Degree Dependencies Visualizer
       </title>
    </head>
    <body>
       <!-- User Inputs -->
       <div id="user_info">
-         <!-- Upload Degree Audit -->
-         <div id="fileUpload">
-            <form action="/action_page.php">
-               <label for="file" style="font-size: 20pt">To get started, upload your
-                  <a
-                     href="https://students.ucsd.edu/academics/advising/degrees-diplomas/degree-audits.html"
-                     target="_blank"
-                     rel="noopener noreferrer">
-                  degree audit</a>:
-               </label>
-               <br />
-               <input type="file" name="filename" style="margin-top:5px">
-               <br />
-               <input type="submit" style="margin-top: 5px;">
-            </form>
-         </div>
+         <label style="font-size:20pt; -webkit-text-fill-color:white">To get started, enter the following information:</label>
+         <br />
          <!-- University Input -->
          <div class="input">
             <span class="dropdown_label">University:</span>
@@ -47,14 +33,37 @@
                <!-- Create more options using JS -->
             </select>
          </div>
-         <!-- A checkbox for if selected degree is a minor -->
       </div>
-
-      <!-- Display Tree -->
+      <div class="buttons">
+         <button class="button" id="main_button" style="width:100px">Main</button>
+         <button class="button" id="upperdiv_button">No Prereq UDs</button>
+      </div>
       <div id="tree_display">
-         <!-- Populate using JS -->
+         <script src="main.js"></script>
       </div>
-      <script src="index.js"></script>
+      <script>
+         document.getElementById("main_button").addEventListener('click', loadMain);
+         document.getElementById("upperdiv_button").addEventListener('click', loadUpperDiv);
+         function loadMain() {
+            removeChildNodes(document.getElementById("tree_display"));
+            document.getElementById("tree_display").innerHTML = '';
+            var script = document.createElement('script');
+            script.src = "main.js";
+            document.getElementById("tree_display").appendChild(script);
+         }
+         function loadUpperDiv() {
+            removeChildNodes(document.getElementById("tree_display"));
+            document.getElementById("tree_display").innerHTML = '';
+            var script = document.createElement('script');
+            script.src = "upperdiv.js";
+            document.getElementById("tree_display").appendChild(script);
+         }
+         function removeChildNodes(parent) {
+            while (parent.firstChild) {
+               parent.removeChild(parent.firstChild);
+            }
+         }
+      </script>
       <script src="mouseover.js"></script>
    </body>
 </html>
