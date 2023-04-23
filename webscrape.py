@@ -124,6 +124,10 @@ def getPrereqs(prerequisitesText):
 
     return prerequisitesArr
 
+@app.route("/")
+def index():
+    return render_template('index.html')
+
 @app.route('/reqDept', methods=['POST'])
 def webScrape():
     """
