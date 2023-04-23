@@ -34,25 +34,34 @@
             </select>
          </div>
       </div>
-      <div id="tree_display">
-         <!-- Content loaded dynamically -->
+      <div class="buttons">
+         <button class="button" id="main_button" style="width:100px">Main</button>
+         <button class="button" id="upperdiv_button">No Prereq UDs</button>
       </div>
-      <button id="main_button">Main</button>
-      <button id="upperdiv_button">No Prereq UDs</button>
+      <div id="tree_display">
+         <script src="main.js"></script>
+      </div>
       <script>
          document.getElementById("main_button").addEventListener('click', loadMain);
          document.getElementById("upperdiv_button").addEventListener('click', loadUpperDiv);
          function loadMain() {
+            removeChildNodes(document.getElementById("tree_display"));
             document.getElementById("tree_display").innerHTML = '';
             var script = document.createElement('script');
             script.src = "main.js";
             document.getElementById("tree_display").appendChild(script);
          }
          function loadUpperDiv() {
+            removeChildNodes(document.getElementById("tree_display"));
             document.getElementById("tree_display").innerHTML = '';
             var script = document.createElement('script');
             script.src = "upperdiv.js";
             document.getElementById("tree_display").appendChild(script);
+         }
+         function removeChildNodes(parent) {
+            while (parent.firstChild) {
+               parent.removeChild(parent.firstChild);
+            }
          }
       </script>
       <script src="mouseover.js"></script>

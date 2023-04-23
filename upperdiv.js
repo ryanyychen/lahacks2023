@@ -672,70 +672,22 @@ var courseList = {
    "CSE 199H": []
 }
 
-var completed = [];
 var layerNum = 1;
+var courseNum = 0;
 var courses = Object.keys(courseList);
-
-/* Run while requirements for degree not completed */
-while (layerNum < 100) {
-   let fullList = true;
-   for (let i = 0; i < completed.length; i++) {
-      if (!completed.includes(courses[i])) {
-         fullList = false;
-      }
-   }
-   if (completed.length != courses.length) fullList = false;
-   if (fullList) break;
-
+while (courseNum < courses.length) {
    /* Add new layer to tree */
    addLayer(layerNum, document.getElementById("tree_display"));
+   var layer = document.getElementById("layer" + layerNum);
+   var layerCourses = 0;
 
-   let taking = [];
-
-   /* Iterate map to find classes that can be taken
-      and create nodes of those classes */
-   for (var course of courses) {
-      /* If node of course does not already exist then check for prerequisites
-         then create new node if all prereqs satisfied*/
-      if (!completed.includes(course)) {
-         /* Get array of prerequisites using key */
-         let allPrerequisites = courseList[course];
-
-         // For now use first element in each 'and' list
-         let prerequisites = [];
-         for (let i = 0; i < allPrerequisites.length; i++) {
-            prerequisites.push(allPrerequisites[i][0])
-         }
-
-         let canTake = true;
-         let prereqs = [];
-         /* Iterate through each prerequisite and check if in 'completed' array */
-         if (prerequisites.length != 1 || prerequisites[0] != null) {
-            for (let i = 0; i < prerequisites.length; i++) {
-               prereqs.push(prerequisites[i]);
-               if (!completed.includes(prerequisites[i])) {
-                  canTake = false;
-               }
-            }
-         }
-         /* If all prereqs satisfied, create new node and add to layer */
-         if (canTake) {
-            addCourse(course, document.getElementById("layer" + layerNum), prereqs);
-
-            /* Add course to list of courses in this layer */
-            taking.push(course);
-
-            let currentCourse = document.getElementById(course);
-            for (let i = 0; i < prerequisites.length; i++) {
-               let prerequisiteCourse = document.getElementById(prerequisites[i]);
-               //console.log(prerequisiteCourse.textContent + " is a prereq of " + currentCourse.textContent);
-            }
-         }
+   while (layerCourses < 5) {
+      if (courseList[courses[courseNum]].length == 0) {
+         addCourse(courses[courseNum], layer, []);
+         layerCourses++;
       }
-   }
-   /* Add all courses in this layer to completed courses */
-   for (let i = 0; i < taking.length; i++) {
-      completed.push(taking[i]);
+      courseNum++;
+      if (courseNum == courses.length) break;
    }
    layerNum++;
 }

@@ -25,6 +25,7 @@ document.body.addEventListener('mousemove', (event) => {
   }
 });
 
+/* Recursively add 'hovered' to ll prereqs */
 function updateHovered(prerequisites) {
    for (let j = 0; j < prerequisites.length; j++) {
       const prerequisite = document.getElementById(prerequisites[j]);
