@@ -8,74 +8,79 @@ Promise.all(promises)
         var completed = [];
         var layerNum = 1;
         var courses = Object.keys(courseListL).concat(Object.keys(courseListU));
+        var newAdds = 1;
+        var taking = [];
+        var overflow = false;
 
-        /* Run while requirements for degree not completed */
-        while (layerNum < 40) {
-            let fullList = true;
-            for (let i = 0; i < completed.length; i++) {
-                if (!completed.includes(courses[i])) {
-                    fullList = false;
-                }
-            }
-            if (completed.length != courses.length) fullList = false;
-            if (fullList) break;
-
+        while (newAdds != 0) {
+            var origNum = completed.length;
             /* Add new layer to tree */
+            var courseNum = 0;
             addLayer(layerNum, document.getElementById("tree_display"));
 
-            let taking = [];
+            if (overflow) {
+                overflow = false;
+            } else {
+                taking = []
+            }
 
             /* Iterate map to find classes that can be taken
             and create nodes of those classes */
             for (var course of courses) {
-            /* If node of course does not already exist then check for prerequisites
+                /* If node of course does not already exist then check for prerequisites
                 then create new node if all prereqs satisfied*/
-            if (!completed.includes(course)) {
-                /* Get array of prerequisites using key */
-                let allPrerequisites;
-                if (Object.keys(courseListL).includes(course)) {
-                    allPrerequisites = courseListL[course];
-                } else {
-                    allPrerequisites = courseListU[course];
-                }
-                
-
-                // For now use first element in each 'and' list
-                let prerequisites = [];
-                for (let i = 0; i < allPrerequisites.length; i++) {
-                    prerequisites.push(allPrerequisites[i][0])
-                }
-
-                let canTake = true;
-                let prereqs = [];
-                /* Iterate through each prerequisite and check if in 'completed' array */
-                if (prerequisites.length > 0 && prerequisites[0] !== null) {
-                    for (let i = 0; i < prerequisites.length; i++) {
-                    prereqs.push(prerequisites[i]);
-                    if (!completed.includes(prerequisites[i])) {
-                        canTake = false;
-                    }
-                    }
-                }
-                /* If all prereqs satisfied, create new node and add to layer */
-                if (canTake) {
-                    if ((Object.keys(courseListU).includes(course) && courseListU[course].length == 0)
-                        || (Object.keys(courseListU).includes(course) && layerNum < 4)) {
-                        continue;
+                if (!completed.includes(course)) {
+                    /* Get array of prerequisites using key */
+                    let allPrerequisites;
+                    if (Object.keys(courseListL).includes(course)) {
+                        allPrerequisites = courseListL[course];
                     } else {
-                        addCourse(course, document.getElementById("layer" + layerNum), prereqs);
+                        allPrerequisites = courseListU[course];
                     }
 
-                    /* Add course to list of courses in this layer */
-                    taking.push(course);
+                    // For now use first element in each 'and' list
+                    let prerequisites = [];
+                    for (let i = 0; i < allPrerequisites.length; i++) {
+                        prerequisites.push(allPrerequisites[i][0])
+                    }
+
+                    let canTake = true;
+                    let prereqs = [];
+                    /* Iterate through each prerequisite and check if in 'completed' array */
+                    if (prerequisites.length > 0 && prerequisites[0] !== null) {
+                        for (let i = 0; i < prerequisites.length; i++) {
+                            prereqs.push(prerequisites[i]);
+                        if (!completed.includes(prerequisites[i])) {
+                            canTake = false;
+                        }
+                        }
+                    }
+                    /* If all prereqs satisfied, create new node and add to layer */
+                    if (canTake) {
+                        if (Object.keys(courseListU).includes(course) && courseListU[course].length == 0) {
+                            completed.push(course);
+                        } else if (Object.keys(courseListU).includes(course) && layerNum < 4) {
+                            continue;
+                        } else {
+                            addCourse(course, document.getElementById("layer" + layerNum), prereqs);
+                            courseNum++;
+                        }
+
+                        /* Add course to list of courses in this layer */
+                        taking.push(course);
+                    }
+                    if (courseNum >= 14) {
+                        overflow = true;
+                        break;
+                    }
                 }
             }
-        }
-        /* Add all courses in this layer to completed courses */
-        for (let i = 0; i < taking.length; i++) {
-            completed.push(taking[i]);
-        }
-        layerNum++;
+            /* Add all courses in this layer to completed courses */
+            for (let i = 0; i < taking.length; i++) {
+                completed.push(taking[i]);
+            }
+            layerNum++;
+            newAdds = completed.length - origNum;
         }
 
         /* Function to create new layer and append to tree_display div */
