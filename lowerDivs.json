@@ -3,13 +3,15 @@
     "CSE 4GS": [
         [
             "MATH 10A",
-            "MATH 20ACSE 6GS"
+            "MATH 20A",
+            "CSE 6GS"
         ]
     ],
     "CSE 6GS": [
         [
             "MATH 10A",
-            "MATH 20ACSE 4GS"
+            "MATH 20A",
+            "CSE 4GS"
         ]
     ],
     "CSE 6R": [],
@@ -47,9 +49,11 @@
         [
             "CSE 20",
             "MATH 15A",
-            "MATH 31CHMATH 154",
+            "MATH 31CH",
+            "MATH 154",
             "MATH 184",
-            "MATH 188CSE 21"
+            "MATH 188",
+            "CSE 21"
         ]
     ],
     "CSE 30": [
